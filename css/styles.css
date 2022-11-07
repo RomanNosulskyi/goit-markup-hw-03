@@ -49,7 +49,9 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
 }
-
+img {
+  display: block;
+}
 ul {
   list-style: none;
 }
@@ -65,11 +67,11 @@ header {
   margin-bottom: 0px;
 
   background-color: #ffffff;
-  border: 1px solid #ececec;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ececec;
 }
-.page-header .container {
-  border-width: 0 0 1px 0;
-}
+
 .logo {
   color: var(--secondary-text-color);
   text-decoration: none;
@@ -78,13 +80,14 @@ header {
   font-size: 26px;
   line-height: 1.19;
 
-  padding-top: 24px;
-  padding-bottom: 25px;
   margin-right: 93px;
   display: flex;
 }
 .logo-web {
   color: var(--accent-text-color);
+}
+.active-page {
+  color: #2196f3;
 }
 .nav {
   display: flex;
@@ -99,7 +102,6 @@ header {
   display: flex;
   margin-left: 93px;
 }
-
 .site-nav a {
   color: var(--primary-text-color);
   text-decoration: none;
@@ -113,6 +115,7 @@ header {
 .site-nav .link:focus {
   color: var(--accent-text-color);
 }
+
 .site-nav .link,
 .auth-nav .link {
   display: block;
@@ -149,26 +152,25 @@ header {
 .address a {
   text-decoration: none;
 }
+
+/* Герой */
+
 .hero {
   margin-top: 0;
 
+  padding-bottom: 200px;
+  padding-top: 200px;
   height: 600px;
   background-color: #2f303a;
   text-align: center;
 }
 .hero-title {
   color: var(--primary-bg-color);
-  padding-bottom: 30px;
-  padding-top: 200px;
 
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
-}
-.container.hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
 }
 
 /* Features */
@@ -191,7 +193,11 @@ header {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-
+.title-features {
+  font-size: 14px;
+  line-height: 1.14px;
+  margin-bottom: 10px;
+}
 .features-list {
   display: flex;
   flex-wrap: nowrap;
@@ -234,8 +240,10 @@ header {
 }
 .section-title,
 .section-title2 {
+  font-size: 36px;
+  line-height: 1.17px;
+
   text-align: center;
-  margin: 0;
   margin-bottom: 50px;
 }
 .type-work {
@@ -302,13 +310,18 @@ p {
   font-family: inherit;
   letter-spacing: 0.06em;
 
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 10px 32px;
   border-radius: 5px;
   line-height: 1.9;
   min-width: 216px;
 }
+
 .btn-secondary {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+
   display: inline-block;
   color: var(--secondary-text-color);
   background-color: var(--button-bg-color);
@@ -322,7 +335,7 @@ p {
 .btn-secondary:focus {
   color: var(--primary-bg-color);
   background-color: var(--accent-text-color);
-  border-color: var(--accent-text-color);
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 }
 
 .footer {
@@ -331,9 +344,7 @@ p {
 
   background-color: #2f303a;
 }
-.address-town {
-  color: var(--primary-bg-color);
-}
+
 .address-town > a {
   color: var(--primary-bg-color);
 }
@@ -350,8 +361,7 @@ p {
   color: var(--accent-text-color);
 }
 .address .address-town,
-.address .address-mail,
-.address .address-tel {
+.address .address-mail {
   display: block;
 
   color: var(--title-text-color);
@@ -359,13 +369,6 @@ p {
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
 
-  margin-bottom: 9px;
-}
-
-.address > a {
-  display: inline-block;
-  text-decoration: none;
-  font-family: inherit;
   margin-bottom: 9px;
 }
 
@@ -377,6 +380,9 @@ p {
   padding-bottom: 50px;
   margin: 0;
 }
+/*.project-list {
+  background-color: #2e2e2e;
+}*/
 .filter-list + .filter-list {
   margin-left: 8px;
 }
@@ -384,24 +390,33 @@ p {
   display: block;
 }
 .project-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
-.project-set {
-  flex-basis: calc((100% - 60px) / 3);
+/*.project-set {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.project-set:nth-child(3n) {
+  margin-right: 0px;
+}*/
+.card {
+  text-decoration: none;
 }
 .project-card {
-  margin-top: 20px;
-  margin-left: 24px;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+
+  padding-top: 20px;
+  padding-left: 24px;
 }
 .project {
   margin-top: 4px;
   margin-left: 24px;
+  margin-right: auto;
   margin-bottom: 20px;
 }
 .card-content {
